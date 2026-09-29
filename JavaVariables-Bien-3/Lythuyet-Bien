@@ -1,0 +1,80 @@
+Biến giống như một "chiếc hộp" dùng để lưu trữ dữ liệu trong bộ nhớ máy tính.
+----------------------------------------------------------------------------
+1. Các kiểu biến phổ biến trong Java
+    Trong Java, bạn phải khai báo rõ kiểu dữ liệu trước khi lưu giá trị vào biến:
+
+            String: Lưu chữ / văn bản (đặt trong dấu nháy kép "")
+            Ví dụ: "Hello".
+
+            int: Lưu số nguyên (không có số thập phân). 
+            Ví dụ: 123 hoặc -123.
+
+            double: Lưu số thực (có số thập phân). 
+            Ví dụ: 19.99 hoặc -4.5.
+
+            char: Lưu một ký tự đơn (đặt trong dấu nháy đơn ''). 
+            Ví dụ: 'a' hoặc 'B'.
+
+            boolean: Lưu 1 trong 2 giá trị đúng/sai: true hoặc false
+
+----------------------------------------------------------------------------
+2. Cú pháp khai báo biếnCú pháp chuẩn:
+
+                                        <Kiểu dữ liệu>  <Tên biến> =  <Giá trị>
+
+
+Ví dụ:
+    public class Main {
+        public static void main(String[] args) {
+
+            String name = "John";
+            int age = 20;
+            double price = 15.5;
+            char myGrade = 'A';
+            boolean isJavaFun = true;
+            
+            System.out.println(name);
+            System.out.println(age);
+  }
+}
+
+----------------------------------------------------------------------------
+3. Từ khóa final (Hằng số)
+Nếu bạn không muốn người khác (hoặc chính bạn) thay đổi giá trị của biến sau khi đã gán, hãy thêm từ khóa final phía trước. Biến này sẽ trở thành hằng số (constant).
+
+Ví dụ: 
+    public class Main {
+     public static void main(String[] args) {
+        final int myNum = 15;
+        // myNum = 20; // Báo lỗi: không thể thay đổi giá trị của biến final
+        System.out.println(myNum);
+    }
+}
+
+----------------------------------------------------------------------------
+4. In biến và Nối chuỗi (Display Variables)
+Bạn dùng dấu + để kết hợp văn bản với biến hoặc nối các biến lại với nhau:
+
+Ví dụ:
+    public class Main {
+        public static void main(String[] args) {
+            String firstName = "John ";
+            String lastName = "Doe";
+            String fullName = firstName + lastName;
+            System.out.println(fullName); // In ra: John Doe
+
+            int x = 5;
+            int y = 6;
+            System.out.println(x + y); // In ra tổng: 11
+        }
+    }
+----------------------------------------------------------------------------    
+5. Khai báo nhiều biến cùng lúc
+                Dùng dấu phẩy , để khai báo nhiều biến cùng kiểu trên 1 dòng:
+
+   int x = 5, y = 6, z = 50;
+   System.out.println(x + y + z); // In ra: 61
+
+
+
+

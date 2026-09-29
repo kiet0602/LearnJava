@@ -1,0 +1,30 @@
+Bài 1: Khai báo một biến tên là maxSpeed có kiểu số nguyên và gán giá trị là 120.
+
+Bài 2: Khai báo một biến tên là carName lưu chuỗi chữ "Volvo".
+
+Bài 3: Khai báo biến PI kiểu số thực với giá trị 3.14 và dùng từ khóa để biến này không thể bị thay đổi giá trị.
+
+Bài 4: Cho 2 biến int x = 10; và int y = 20;. In ra màn hình dòng chữ: "Tổng là: 30" bằng cách dùng dấu +.
+
+Bài 5: Đoạn code sau có lỗi không? Nếu có thì lỗi ở dòng nào?
+
+Line 1: final int age = 18;
+
+Line 2: age = 19;
+
+Line 3: System.out.println(age);
+
+Bài 1: int maxSpeed = 120;
+
+Bài 2: String carName = "Volvo";
+
+Bài 3: final double PI = 3.14;
+
+Bài 4: System.out.println("Tổng là: " + (x + y));
+
+Bài 5: Có lỗi ở Line 2 vì age đã được khai báo với từ khóa final nên không thể gán lại giá trị mới.
+
+
+
+Giải:
+        
