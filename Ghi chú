@@ -1,0 +1,30 @@
+Shift + Alt + F
+: Tự động căn chỉnh/định dạng lại code (Format Document).
+
+Ctrl + .
+: Gợi ý sửa lỗi nhanh / Import thư viện tự động (Quick Fix).\
+
+
+main + Tab / Enter
+: Tạo nhanh phương thức 
+public static void main(String[] args).
+
+
+sysout + Tab / Enter
+: Tạo nhanh lệnh in 
+System.out.println().
+
+
+Alt + Shift + S (hoặc chuột phải chọn Source Action...)
+: Mở menu sinh mã tự động (Generate Getters/Setters, Constructors, toString(), hashCode(), equals()).
+
+
+Thực hiện chạy file Java
+Cách 1 
+    (Dùng nút bấm - Nhanh nhất): 
+    Nhìn lên góc trên bên phải màn hình làm việc, bấm vào biểu tượng nút Play ($\triangleright$) chọn Run Java. 
+    Hoặc bấm vào chữ Run xuất hiện ngay phía trên dòng public static void main.
+Cách 2 
+    (Dùng phím tắt): Nhấn tổ hợp phím Ctrl + F5 (chạy thường) hoặc F5 (chạy chế độ Debug).
+Cách 3 
+    (Dùng Terminal thủ công): Mở Terminal (Ctrl + `) và gõ lệnh:

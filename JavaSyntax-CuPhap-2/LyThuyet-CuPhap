@@ -1,0 +1,82 @@
+
+1. Cấu trúc chương trình cơ bản
+    Mọi đoạn mã Java đều phải nằm bên trong một Class (Lớp), và tên của class phải trùng khớp hoàn toàn với tên tệp tin (Main.java).    
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+Giải thích cú pháp:
+    public class Main: Khai báo một class có tên là Main. Trong Java, mọi dòng code thực thi đều phải nằm trong class.
+
+    public static void main(String[] args): Hàm main() là thành phần bắt buộc. Đây là điểm khởi chạy chính của bất kỳ chương trình Java nào.
+
+    System.out.println(): Lệnh dùng để in chữ/dữ liệu ra màn hình.
+
+    Dấu chấm phẩy ;: Mỗi câu lệnh trong Java bắt buộc phải kết thúc bằng dấu ;.
+
+    Phân biệt hoa/thường: Java phân biệt tuyệt đối chữ hoa và chữ thường (Main khác main, System khác system).
+    -------------------------------------------------------------------------------------------------------------------------------------
+
+2. In dữ liệu ra màn hình (Output)
+    Để xuất dữ liệu ra màn hình, bạn sử dụng phương thức System.out.println() hoặc System.out.print().
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Dòng 1");
+    System.out.println("Dòng 2");
+    System.out.print("Dòng 3 - ");
+    System.out.print("Vẫn ở Dòng 3");
+  }
+}
+2. Java Output Numbers (In số và tính toán)
+    Khác với chữ, khi in Số hoặc Phép tính, bạn KHÔNG đặt trong dấu nháy kép "".
+
+Ví dụ 1: In số trực tiếp
+
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println(100); // in ra 100
+    System.out.println(3.14);
+    System.out.println(50000);
+  }
+}
+
+
+
+Sự khác biệt:
+    println(): In ra dữ liệu và tự động xuống dòng tiếp theo.
+
+    print(): In ra dữ liệu nhưng không xuống dòng (câu lệnh tiếp theo sẽ in ngay kế bên).
+
+ -----------------------------------------------------------------------------------------------------------------------------------------
+
+3. Chú thích trong Code (Comments)
+   Chú thích được dùng để giải thích mã nguồn, giúp code dễ đọc hơn hoặc dùng để tạm thời ngắt dòng code khi kiểm thử. JVM sẽ bỏ qua hoàn toàn các dòng chú thích này.
+
+
+Dạng 1: Single-line Comments (Chú thích 1 dòng)
+Bắt đầu bằng hai dấu gạch chéo //. Bất kỳ ký tự nào nằm sau // trên dòng đó đều là chú thích.
+
+public class Main {
+    public static void main(String[] args) {
+        // Đây là chú thích nằm trên một dòng riêng
+        System.out.println("Hello World"); // Đây là chú thích ở cuối dòng code
+    }
+    }
+
+
+    Dạng 2: Multi-line Comments (Chú thích nhiều dòng)
+    Bắt đầu bằng /* và kết thúc bằng */. Tất cả văn bản nằm giữa cặp ký hiệu này sẽ được coi là chú thích.
+
+public class Main {
+    public static void main(String[] args) {
+        /* Đoạn code dưới đây sẽ in
+        dòng chữ Hello World ra màn hình
+        và nó rất dễ hiểu */
+        System.out.println("Hello World");
+    }
+    }
+

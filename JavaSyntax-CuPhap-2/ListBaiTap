@@ -1,0 +1,39 @@
+Bài 1: Viết câu lệnh in ra dòng chữ "Chào mừng bạn đến với Java!" và tự động xuống dòng.
+
+Bài 2: Viết câu lệnh in ra kết quả của phép tính 150 + 350 (yêu cầu màn hình hiển thị ra số 500).
+
+Bài 3: Viết 1 dòng chú thích (comment) giải thích mục đích của hàm main().
+
+Bài 4: Dùng lệnh System.out.print() để in tên của bạn và tuổi của bạn trên cùng 1 dòng (Ví dụ output: Nam - 20 tuổi).
+
+
+Giải: 
+
+Câu 1:
+public class GiaiBaitap {
+    public static void main(String[] args) {
+        System.out.println("Chào mừng bạn đến với Java");
+    }
+}
+-------------------------------------------------------
+Câu 2:
+public class GiaiBaitap {
+    public static void main(String[] args) {
+        System.out.println(350 + 150);
+    }
+}
+
+Câu 3:
+public class GiaiBaitap {
+    public static void main(String[] args) {
+        //Hàm main() là thành phần bắt buộc. Đây là điểm khởi chạy chính của bất kỳ chương trình Java nào.
+       // ...
+    }
+}
+Câu 4:
+public class GiaiBaitap {
+    public static void main(String[] args) {
+     System.out.print("Nam - ");
+     System.out.print("20 tuổi");
+    }
+}
