@@ -1,0 +1,81 @@
+Bài 1: Khai báo một biến kiểu float tên là myWeight lưu giá trị 65.5 (nhớ viết đúng quy cách).
+
+Bài 2: Chọn kiểu dữ liệu thích hợp nhất cho các trường hợp sau:
+
+Số lượng học sinh trong 1 lớp (khoảng 30-40 người).
+
+Dân số thế giới (hơn 8 tỷ người).
+
+Trạng thái đăng nhập của người dùng (đã đăng nhập / chưa đăng nhập).
+
+Điểm trung bình môn học (Ví dụ: 8.45).
+
+Bài 3: Khai báo một biến kiểu char lưu chữ cái 'Z' và in ra màn hình.
+
+Bài 4: Sửa lỗi cho đoạn mã sau để chương trình chạy đúng:
+        float price = 10.99;
+        char gender = "M";
+
+
+Bài 5: Dự đoán xem biến x có giá trị hợp lệ không: byte x = 150; (Giải thích tại sao).
+
+
+Giải:
+
+Bài 1:
+public class GiaiBaiTapKDL {
+    public static void main(String[] args) {
+        float myWeight = 65.5f;
+
+    System.out.println(myWeight);
+    }
+    
+}
+
+Bài 2:
+
+public class GiaiBaiTapKDL {
+    public static void main(String[] args) {
+        byte quanlityStudent = 50;
+        long danSoTheGioi = 800000000L;
+        boolean stateDangNhap = false;
+        float diemTrungBinh = 8.5f;
+
+        System.out.println("Số lượng học sinh: " + quanlityStudent);
+        System.out.println("Dân số thế giới: " + danSoTheGioi);
+        System.out.println("Trạng thái đăng nhập: " + stateDangNhap);
+        System.out.println("Điểm trung bình: " + diemTrungBinh);
+
+    }
+
+}
+Bài 3:
+public class GiaiBaiTapKDL {
+    public static void main(String[] args) {
+    char kyTu = 'Z';
+    System.out.println(kyTu);
+    }
+}
+
+
+Bài 4:
+public class GiaiBaiTapKDL {
+    public static void main(String[] args) {
+        float price = 10.99f; // thêm f
+        char gender = 'M'; // sửa ngoặc kép "" thành đơn ''
+        System.out.println("Giá của sản phẩm: " + price);
+        System.out.println("Giới tính: " + gender);
+    }
+
+}
+
+Bài 5:
+
+public class GiaiBaiTapKDL {
+    public static void main(String[] args) {
+       byte x = 150; // Sai vì byte -128 đến 127 (< 150) -> bị vượt quá phạm vi lưu trữ (Overflow).
+        System.out.println(x);
+    }
+
+}
+

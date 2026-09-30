@@ -14,17 +14,49 @@ Line 2: age = 19;
 
 Line 3: System.out.println(age);
 
-Bài 1: int maxSpeed = 120;
-
-Bài 2: String carName = "Volvo";
-
-Bài 3: final double PI = 3.14;
-
-Bài 4: System.out.println("Tổng là: " + (x + y));
-
-Bài 5: Có lỗi ở Line 2 vì age đã được khai báo với từ khóa final nên không thể gán lại giá trị mới.
 
 
 
 Giải:
-        
+Bài 1:
+public class GiaiBaiTapBien {
+    public static void main(String[] args) {
+            int maxSpeed = 120;
+    }
+}
+
+Bài 2: 
+public class GiaiBaiTapBien {
+    public static void main(String[] args) {
+            String carName = "Volvo";
+    }
+}
+
+Bài 3:
+
+public class GiaiBaiTapBien {
+    public static void main(String[] args) {
+        float final Pi = 3.14;
+    }
+}
+Bài 4:
+public class GiaiBaiTapBien {
+    public static void main(String[] args) {
+       // int Tong; //Tạo 1 biến tạm phải có khai báo kiểu dữ liệu (nếu không -> lỗi)
+        int x = 10;
+        int y = 20;
+      //  Tong = x + y;
+        System.out.println ("Tổng là: " + (x + y)); 
+        // Dấu ngoặc () đóng vai trò "ngăn cách" để ép Java phải thực hiện phép cộng toán học giữa $x$ và $y$ trước, 
+        // sau đó mới mang kết quả đó đi nối vào chuỗi ở phía trước.
+    }
+}
+Bài 5: Có lỗi ở Line 2 vì age đã được khai báo với từ khóa final nên không thể gán lại giá trị mới.
+ 
+public class GiaiBaiTapBien {
+    public static void main(String[] args) {
+       final int age = 18;
+        age = 20;
+        System.out.println(age);
+    }
+}

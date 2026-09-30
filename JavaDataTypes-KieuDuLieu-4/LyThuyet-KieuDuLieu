@@ -1,0 +1,120 @@
+Lưu ý quan trọng:
+Trong Java, biến bắt buộc phải có một kiểu dữ liệu xác định. Kiểu dữ liệu quyết định kích thước bộ nhớ và loại giá trị mà biến đó có thể lưu trữ. 
+
+---------------------------------------------------------------------------------------------------------------
+1. Phân loại kiểu dữ liệu
+Java chia kiểu dữ liệu thành 2 nhóm chính:
+
+        Primitive Data Types (Kiểu dữ liệu nguyên thủy): Bao gồm byte, short, int, long, float, double, boolean, char.
+
+        Non-Primitive Data Types (Kiểu dữ liệu phi nguyên thủy / Tham chiếu): Bao gồm String, Arrays, Classes,...
+---------------------------------------------------------------------------------------------------------------
+2. Các kiểu dữ liệu nguyên thủy (Primitive Data Types)
+
+| Kiểu dữ liệu | Kích thước | Mô tả & Phạm vi lưu trữ                                                 |
+| :----------- | :--------- | :---------------------------------------------------------------------- |
+| **`byte`**   | 1 byte     | Số nguyên từ -128 đến 127                                               |
+| **`short`**  | 2 bytes    | Số nguyên từ -32,768 đến 32,767                                         |
+| **`int`**    | 4 bytes    | Số nguyên từ -2,147,483,648 đến 2,147,483,647 *(Mặc định cho số nguyên)* |
+| **`long`**   | 8 bytes    | Số nguyên rất lớn (Thường thêm hậu tố `L` ở cuối)                       |
+| **`float`**  | 4 bytes    | Số thực, lưu được 6 - 7 chữ số thập phân (Bắt buộc thêm hậu tố `f`)     |
+| **`double`** | 8 bytes    | Số thực, lưu được 15 chữ số thập phân *(Mặc định cho số thực)*          |
+| **`boolean`**| 1 bit      | Chỉ nhận 2 giá trị: `true` hoặc `false`                                 |
+| **`char`**   | 2 bytes    | Lưu một ký tự đơn / ký tự ASCII (đặt trong dấu nháy đơn `''`)           |
+
+ví dụ: 
+public class Main {
+  public static void main(String[] args) {
+    // Kiểu số nguyên
+    byte myByte = 100;
+    int myInt = 100000;
+    long myLong = 15000000000L; // Thêm 'L' ở cuối
+    
+    // Kiểu số thực
+    float myFloat = 5.75f;      // Thêm 'f' ở cuối
+    double myDouble = 19.99d;
+    
+    // Kiểu luận lý & ký tự
+    boolean isJavaFun = true;
+    char myGrade = 'A';
+    
+    System.out.println(myByte);
+    System.out.println(myFloat);
+    System.out.println(isJavaFun);
+  }
+}
+
+---------------------------------------------------------------------------------------------------------------
+### 2. Khác biệt giữa Primitive và Non-Primitive
+| Đặc điểm         | Primitive (Nguyên thủy)   | Non-Primitive (Phi nguyên thủy)        |
+| :--------------- | :------------------------ | :------------------------------------- |
+| **Tạo bởi**      | Có sẵn trong Java         | Do lập trình viên tạo ra (trừ `String`)|
+| **Giá trị null** | Không thể gán `null`      | Có thể nhận giá trị `null`             |
+| **Viết hoa**     | Luôn viết thường (`int`)  | Luôn bắt đầu chữ hoa (`String`, `Main`)|
+| **Kích thước**   | Cố định theo từng loại    | Phụ thuộc vào từng đối tượng           |
+
+-------------------------------------------------------------------------------------------------------------------
+
+Var : (Local Variable Type Inference - Tự động suy luận kiểu dữ liệu cục bộ), được giới thiệu từ phiên bản Java 10.
+var giúp bạn khai báo biến nhanh hơn bằng cách để trình biên dịch Java tự nhận diện kiểu dữ liệu dựa vào giá trị bạn gán cho nó.
+--------------------------------------------------------------------------------------
+1. Cú pháp và Cách sử dụng
+Thay vì khai báo tên kiểu dữ liệu cụ thể (int, String, double...), bạn chỉ cần dùng từ khóa var:
+
+public class Main {
+  public static void main(String[] args) {
+    // Java tự hiểu x là kiểu int
+    var x = 5; 
+    
+    // Java tự hiểu name là kiểu String
+    var name = "John"; 
+    
+    // Java tự hiểu price là kiểu double
+    var price = 19.99; 
+    
+    // Java tự hiểu isJavaFun là kiểu boolean
+    var isJavaFun = true; 
+
+    System.out.println(x);
+    System.out.println(name);
+  }
+}
+
+
+-------------------------------------------------------------------------------------
+Lưu ý quan trọng: 
+Var không phải là kiểu dữ liệu động như trong Python hay JavaScript. 
+Một khi Java đã suy luận ra kiểu dữ liệu (ví dụ: x là int), BIẾN ĐÓ sẽ cố định kiểu int mãi mãi. 
+Bạn không thể gán một chuỗi chữ vào x sau đó (x = "Hello"; sẽ báo lỗi biên dịch).
+
+Lưu ý: 
+Khi dùng var phải khai báo giá trị ngay:
+
+ví dụ:
+  var age = 20; // ĐÚNG vì nó đang ở kiểu số nguyên (int / byte / long)
+  var age; // LỖI vì không có giá trị.
+  var age = "ten"; // LỖI vì nó đã hiểu biến age là kiểu số nguyên, không thể đổi kiểu chuỗi được.
+  var name = "ten"; // ĐÚNG vì biến này chưa có khai báo var trước đó.
+-------------------------------------------------------------------------------------
+
+
+
+
+
+Phải gán giá trị ngay khi khai báo:
+var a = 10; // ĐÚNG
+var b;     // LỖI! Java không biết b là kiểu gì, chưa có giá trị của biến.
+b = 10;
+----------------------------------------------------------------------
+Không thể gán null khi khai báo:
+var name = null; // LỖI! Java không thể đoán kiểu dữ liệu từ null
+
+-----------------------------------------------------------------------
+Chỉ dùng cho biến cục bộ (Local Variables): 
+Được dùng bên trong phương thức/hàm.
+KHÔNG được dùng cho thuộc tính của Class, tham số của hàm, hoặc kiểu trả về của hàm.
+public class Main {
+  // var age = 20; // LỖI! Không dùng cho thuộc tính class
+
+  // public static void myMethod(var x) {} // LỖI! Không dùng cho tham số hàm
+}
