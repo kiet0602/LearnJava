@@ -2,13 +2,13 @@ Bài 1: Cho double myDouble = 8.69;. Hãy viết dòng lệnh ép kiểu thủ c
 myDouble thành kiểu int và lưu vào biến myInt.
 Bài 2: Cho câu lệnh System.out.println((int) 9.99);. Màn hình sẽ in ra số nào?
 Bài 3: Đoạn code sau có lỗi không? Nếu có thì sửa lại thế nào?
-long maxVal = 10000L;
-int num = maxVal;
+        long maxVal = 10000L;
+        int num = maxVal;
 Bài 4: Bạn thực hiện tính điểm trung bình:
-int total = 10;
-int count = 4;
-double avg = total / count;
-Biến avg sẽ nhận giá trị 2.5 hay 2.0? Hãy giải thích và nêu cách sửa để nhận kết quả 2.5.
+        int total = 10;
+        int count = 4;
+        double avg = total / count;
+        Biến avg sẽ nhận giá trị 2.5 hay 2.0? Hãy giải thích và nêu cách sửa để nhận kết quả 2.5.
 
 Giải:
 Bài 1:
@@ -57,11 +57,55 @@ public class GiaiBaiTapEpKieuDL {
 
 
 
+Bài 1: Cho double pricePrimitive = 49.99;. Hãy chuyển giá trị này thành đối tượng Double 
+bằng 2 cách (dùng Autoboxing và dùng Double.valueOf()).
+
+Bài 2: Viết đoạn code chuyển chuỗi String text = "150"; 
+thành đối tượng Integer, sau đó dùng Unboxing để cộng thêm 50 và in kết quả ra màn hình.
+
+Bài 3: Phân biệt kết quả trả về của hai câu lệnh sau:
+
+a) Integer.parseInt("200");
+
+b) Integer.valueOf("200");
+
+Bài 4: Đoạn code sau có chạy thành công không? Giải thích tại sao:
+Integer numObj = null;
+int numPrimitive = numObj; // Unboxing
 
 
+Giải:
+ Bài 1:
+ public class GiaiBaiTapEpKieuDL {
+    public static void main(String[] args) {
+        double pricePrimitive = 49.99d;
+       // Double autoboxingPrice = pricePrimitive;
+        // autoboxingPrice2.valueOf(pricePrimitive); // sai
 
+        // Cách 1: Autoboxings
+        Double obj1 = pricePrimitive;
+        // Cách 2: Phương thức valueOf
+        Double obj2 = Double.valueOf(pricePrimitive);
+    }
+}
+ Bài 2: 
+ public class GiaiBaiTapEpKieuDL {
+    public static void main(String[] args) {
+        String text = "150";
+        Integer obj = Integer.valueOf(text); //String -> Integer
+        int result = obj + 50;// unboxing Integer -> int
+        System.out.println(result);
+    }
+}
 
+Bài 3:
+a) Integer.parseInt("200"); // trả về kiểu dữ liệu int (nguyên thủy)
+b) Integer.valueOf("200"); // Trả về đối tượng Integer 
 
+Bài 4:
+Chương trình bị lỗi NullPointerException ở dòng 2 khi chạy (Runtime).
+ Lý do: numObj đang giữ giá trị null, 
+ khi Java cố thực hiện Unboxing gọi hàm numObj.intValue() để chuyển về int thì sẽ bị crash vì không thể gọi phương thức trên đối tượng null.
 
 
 
