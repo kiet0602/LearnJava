@@ -1,0 +1,92 @@
+Bài 1: Cho double myDouble = 8.69;. Hãy viết dòng lệnh ép kiểu thủ công biến 
+myDouble thành kiểu int và lưu vào biến myInt.
+Bài 2: Cho câu lệnh System.out.println((int) 9.99);. Màn hình sẽ in ra số nào?
+Bài 3: Đoạn code sau có lỗi không? Nếu có thì sửa lại thế nào?
+long maxVal = 10000L;
+int num = maxVal;
+Bài 4: Bạn thực hiện tính điểm trung bình:
+int total = 10;
+int count = 4;
+double avg = total / count;
+Biến avg sẽ nhận giá trị 2.5 hay 2.0? Hãy giải thích và nêu cách sửa để nhận kết quả 2.5.
+
+Giải:
+Bài 1:
+public class GiaiBaiTapEpKieuDL {
+    public static void main(String[] args) {
+        double myDouble = 8.69;
+      int  myInt = (int) myDouble;
+      System.out.println(myInt); // 8 
+    }
+}
+
+Bài 2:
+public class GiaiBaiTapEpKieuDL {
+    public static void main(String[] args) {
+      System.out.println((int) 9.99); // 9 
+    }
+}
+Bài 3:
+public class GiaiBaiTapEpKieuDL {
+    public static void main(String[] args) {
+        long maxVal = 10000L;
+        int num = (int) maxVal; //thêm (int). ép kiểu thủ công
+        System.out.println(num); // 10000
+    }
+}
+ Bài 4:
+
+
+ Lưu ý:
+ Biến avg sẽ có giá trị là 2.0 vì phép chia 10 / 4 giữa 2 số nguyên (int) sẽ trả về số nguyên 2 trước, 
+ sau đó mới tự động gán vào double. -> nó sẽ là 2.0
+ Vì vậy phải gán 1 trong 2 thành dạng double trước khi muốn nhận 2.5;
+
+Cách sửa: Ép kiểu 1 trong 2 số sang double trước khi chia:
+public class GiaiBaiTapEpKieuDL {
+    public static void main(String[] args) {
+        int total = 10;
+        int count = 4;
+        double avg = (double) total / count; // vì ép về double nên phép tính trả về số thực -> 2.5
+        double avg2 = total / count; // chưa ép về double nên phép tính trả về số nguyên -> 2.0
+        System.out.println(avg); // 2.5
+        System.out.println(avg2); // 2.0
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bài 1: Cho double pricePrimitive = 49.99;. Hãy chuyển giá trị này thành đối tượng Double bằng 2 cách (dùng Autoboxing và dùng Double.valueOf()).
+
+Bài 2: Viết đoạn code chuyển chuỗi String text = "150"; thành đối tượng Integer, sau đó dùng Unboxing để cộng thêm 50 và in kết quả ra màn hình.
+
+Bài 3: Phân biệt kết quả trả về của hai câu lệnh sau:
+
+a) Integer.parseInt("200");
+
+b) Integer.valueOf("200");

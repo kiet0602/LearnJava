@@ -1,0 +1,136 @@
+Java Type Casting (Ép kiểu dữ liệu trong Java)
+Type Casting (Ép kiểu) là quá trình gán giá trị của một kiểu dữ liệu nguyên thủy này cho một kiểu dữ liệu nguyên thủy khác.
+
+-------------------------------------------------------------------------------------------------------------------------------
+Trong Java, có 2 loại ép kiểu:
+            Widening Casting (Tự động) - Chuyển từ kiểu dữ liệu nhỏ hơn sang kiểu dữ liệu lớn hơn.
+            Narrowing Casting (Thủ công) - Chuyển từ kiểu dữ liệu lớn hơn sang kiểu dữ liệu nhỏ hơn.
+-------------------------------------------------------------------------------------------------------------------------------
+1. Widening Casting (Ép kiểu nới rộng)Ép kiểu nới rộng diễn ra tự động khi bạn truyền một giá trị có kiểu dữ liệu nhỏ hơn vào một biến có kiểu dữ liệu lớn hơn.
+Thứ tự kích thước từ nhỏ đến lớn:
+                                    byte -> short -> char -> int -> long -> float -> double
+Ví dụ:                                    
+public class Main {
+  public static void main(String[] args) {
+    int myInt = 9;
+    double myDouble = myInt; // Tự động ép kiểu: int sang double
+
+    System.out.println(myInt);      // In ra 9
+    System.out.println(myDouble);   // In ra 9.0
+  }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+2. Narrowing Casting (Ép kiểu thu hẹp)
+Ép kiểu thu hẹp phải làm thủ công bằng cách đặt tên kiểu dữ liệu mong muốn trong cặp ngoặc đơn () phía trước giá trị.
+Thứ tự chuyển đổi từ lớn về nhỏ:
+                                      double ->  float ->  long -> int ->  char ->  short ->  byte
+
+public class Main {
+  public static void main(String[] args) {
+    double myDouble = 9.78d;
+    int myInt = (int) myDouble; // Ép kiểu thủ công: double sang int
+
+    System.out.println(myDouble);   // In ra 9.78
+    System.out.println(myInt);      // In ra 9 (mất phần thập phân)
+  }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+| Loại ép kiểu          | Chuyển đổi              | Tự động / Thủ công | Nguy cơ mất dữ liệu       | Cú pháp ví dụ             |
+| :-------------------- | :-----------------------| :----------------- | :-------------------------| :------------------------ |
+| **Widening Casting**  | Kiểu nhỏ ----> Kiểu lớn | Tự động (JVM)      | Không                     | `double d = myInt;`       |
+| **Narrowing Casting** | Kiểu lớn ----> Kiểu nhỏ | Thủ công `(type)`  | Có (mất phần dư/thập phân)| `int i = (int) myDouble;` |
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+****NÂNG CAO HƠN TÝ
+
+Java Type Casting Mở Rộng: Chuyển đổi giữa Primitive và Non-Primitive
+        Primitive (int, double, boolean...) 
+     ▲                                       ▲
+     │  (1) Autoboxing / Unboxing            │  (2) Parsing / String.valueOf()
+     ▼                                       ▼
+        Non-Primitive (Integer, Double...) <───> String (Chuỗi chữ)
+
+-------------------------------------------------------------------------------------------------------------------------------
+2. Các cơ chế chuyển đổi chi tiết.
+
+-------------------------------------------------------------------------------------------------------------------------------
+A. Primitive <------> Wrapper Class (Autoboxing & Unboxing)
+Java tự động chuyển đổi giữa kiểu nguyên thủy và Wrapper Class tương ứng của nó :
+                                                    ==>   Primitive <--------> Wrapper Class    
+                                                                (int <------> Integer , 
+                                                                double <------> Double, 
+                                                                boolean <------> Boolean...).
+ ví dụ 
+ public class Main {
+  public static void main(String[] args) {
+    // 1. Autoboxing: int -> Integer
+    int a = 10;
+    Integer aObj = a; // Tự động đóng gói (JVM thực chất gọi Integer.valueOf(a))
+
+    // 2. Unboxing: Double -> double
+    Double bObj = 15.5;
+    double b = bObj;  // Tự động mở gói (JVM thực chất gọi bObj.doubleValue())
+
+    System.out.println(aObj); // 10
+    System.out.println(b);    // 15.5
+  }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+B. Primitive <-----------> String
+
+Cách 1 (Khuyên dùng): String.valueOf(val)
+Cách 2: PrimitiveType.toString(val) (ví dụ: Integer.toString(10))
+Cách 3 (Mẹo): Nối chuỗi val + ""
+
+B2.String <-----> Primitive
+
+Ví dụ:
+
+public class Main {
+  public static void main(String[] args) {
+    // Primitive -> String
+    int num = 100;
+    String str1 = String.valueOf(num); // "100"
+
+    // String -> Primitive
+    String str2 = "250";
+    int parsedNum = Integer.parseInt(str2);       // String -> int
+    double parsedDouble = Double.parseDouble("3.14"); // String -> double
+
+    System.out.println(parsedNum + 50); // In ra: 300
+  }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+C. Wrapper Class (Non-Primitive) <--------> String
+Ví dụ:
+
+public class Main {
+  public static void main(String[] args) {
+    // Wrapper Object -> String
+    Integer obj = 500;
+    String str = obj.toString(); // "500"
+
+    // String -> Wrapper Object
+    String input = "123";
+    Integer obj2 = Integer.valueOf(input); // Trả về đối tượng Integer (không phải int primitive)
+  }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+| Hướng chuyển đổi                      | Cơ chế / Phương thức sử dụng       | Ví dụ code cụ thể                       |
+| :------------------------------------ | :--------------------------------- | :-------------------------------------- |
+| **Primitive -----> Wrapper**          | Autoboxing (Tự động)               | `Integer obj = 10;`                     |
+| **Wrapper -----> Primitive**          | Unboxing (Tự động)                 | `int x = obj;`                          |
+| **Primitive -----> String**           | `String.valueOf(val)`              | `String s = String.valueOf(100);`       |
+| **String -----> Primitive**           | `Wrapper.parseXxx(str)`            | `int x = Integer.parseInt("100");`      |
+| **String -----> Wrapper**             | `Wrapper.valueOf(str)`             | `Integer obj = Integer.valueOf("100");` |
+| **Wrapper -----> String**             | `obj.toString()`                   | `String s = obj.toString();`            |
