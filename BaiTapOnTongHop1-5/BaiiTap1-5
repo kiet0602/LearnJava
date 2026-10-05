@@ -1,0 +1,70 @@
+Khi hoàn thành bộ bài tập tổng hợp này, bạn sẽ đạt được và nắm chắc:
+
+Cú pháp (Syntax): Nắm vững cấu trúc một chương trình Java chuẩn (class, main), 
+quy tắc đặt tên (camelCase, PascalCase), cách dùng dấu chấm phẩy ; và đóng mở ngoặc {}.
+
+Biến (Variables) & Kiểu dữ liệu (Data Types): Làm chủ việc lựa chọn kiểu dữ liệu tối ưu (int, double, boolean, char, String), 
+hiểu rõ cách cấp phát bộ nhớ (Stack vs Heap) và phạm vi lưu trữ.
+
+Ép kiểu dữ liệu (Type Casting): Thành thạo chuyển đổi tự động (Widening), 
+thủ công (Narrowing), và quan trọng nhất là kỹ năng chuyển đổi qua lại giữa Chuỗi (String) <---->   Số nguyên thủy (int/double) <----->  Wrapper Class (Integer/Double).
+
+Tư duy lập trình: Kỹ năng phát hiện lỗi biên dịch (Compile-time Errors), 
+lỗi khi chạy chương trình (Runtime Errors - như NumberFormatException, NullPointerException) và tư duy xử lý dữ liệu thực tế.
+
+
+
+
+Bài 1: Đọc mã nguồn & Phát hiện lỗi sai (Debugging)
+Đoạn code dưới đây chứa 4 lỗi biên dịch. Hãy xác định dòng gây lỗi và đưa ra cách sửa chính xác:
+public class Main {
+    public static void main(String[] args) {
+        int 1stScore = 95;
+        float price = 19.99;
+        int count = null;
+        
+        String input = "100đ";
+        int total = Integer.parseInt(input);
+        
+        System.out.println("Total: " + total);
+    }
+}
+
+Bài 2: Hệ thống Quản lý Hóa đơn Bán hàng (Xử lý Số & Chuỗi)
+Viết chương trình tính toán hóa đơn siêu thị theo các bước sau:
+
+1. Khai báo các thông tin sản phẩm dưới dạng chuỗi nhập vào:
+    String productName = "Tai nghe Bluetooth";
+    String priceStr = "450000"; (Giá tiền)
+    String quantityStr = "3"; (Số lượng mua)
+    String taxRateStr = "0.1"; (Thuế VAT 10%)
+
+2. Chuyển đổi các chuỗi dữ liệu số sang kiểu dữ liệu primitive tương ứng (int cho số lượng, double cho giá và thuế).
+3. Tính tổng tiền trước thuế: Tổng tiền = Giá * Số lượng.
+4. Tính tổng tiền sau thuế: Tiền sau thuế = Tổng tiền + (Tổng tiền * Thuế).
+5. Ép kiểu thủ công (Narrowing) số tiền sau thuế về dạng số nguyên long để làm tròn bỏ phần thập phân.
+6. In ra màn hình hóa đơn hoàn chỉnh: bao gồm Tên sản phẩm, Số lượng, Tổng tiền chưa thuế và Số tiền phải thanh toán (dạng số nguyên).
+
+
+
+
+
+
+Bài 3: Thử thách Thẻ Sinh viên & Điểm số (Tích hợp Primitive & Wrapper Class)
+Viết chương trình quản lý thông tin điểm số sinh viên:
+1. Khai báo thông tin:
+String studentName = "Nguyen Van A";
+String mathStr = "8.5";
+String englishStr = "7.0";
+
+
+2. Chuyển đổi hai chuỗi điểm trên thành đối tượng Wrapper Class Double.
+3. Tính điểm trung bình (dạng double primitive) bằng cách kết hợp Unboxing:
+Điểm TB = (Điểm Toán + Điểm Anh) / 2;
+
+4. Kiểm tra điều kiện qua môn: Sinh viên đậu nếu Điểm TB >= 5.0 (Lưu vào biến boolean isPassed).
+5. Chuyển điểm trung bình dạng double sang String bằng String.valueOf().
+6. In ra thông báo: "Sinh vien [Tên] - Diem TB: [DiemTBStr] - Trang thai dau: [isPassed]".
+
+
+
